@@ -6,6 +6,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import rootReducer from './Redux/Reducers/index';
 import Routes from './Components/Routes';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(
   rootReducer,
