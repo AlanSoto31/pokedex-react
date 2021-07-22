@@ -6,7 +6,6 @@ import Nav from 'react-bootstrap/Nav';
 const Navbar = () => (
   <Nav >
     <Link className="navbar-brand" to="/"><p >Home</p></Link>
-    <Link className="navbar-brand" to="/id"><p >Details</p></Link>
   </Nav>
 );
 
