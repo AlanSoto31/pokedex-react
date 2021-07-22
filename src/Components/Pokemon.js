@@ -1,14 +1,23 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Pokemon = ({pokemon}) => {
-    return (
-        <li>
-            <Link to={`/${pokemon.id}`}>
-                {pokemon.name}
-            </Link>
-        </li>
-    )
-}
+const Pokemon = ({ pokemon }) => (
+  <li>
+    <Link to={`/${pokemon.id}`}>
+      {pokemon.name}
+    </Link>
+  </li>
+);
 
-export default Pokemon
+Pokemon.propTypes = {
+  pokemon: PropTypes.shape({
+    id: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+    name: PropTypes.string,
+  }).isRequired,
+};
+
+export default Pokemon;
