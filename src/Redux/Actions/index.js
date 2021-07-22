@@ -13,9 +13,10 @@ export const showError = (e) => ({
   payload: `Something went wrong loading game list component${e}`,
 });
 
-export const fetchPokemonList = () => async (dispatch) => {
+export const fetchPokemonList = (offset) => async (dispatch) => {
   try {
-    const pokemons = await fetch('http://localhos:3000/pokemons').then((res) => res.json());
+    const url = `http://localhost:3000/pokemons?limit=2&offset=${offset}`;
+    const pokemons = await fetch(url).then((res) => res.json());
     dispatch(setLoading(true));
     dispatch(displayPokemons(pokemons.data));
   } catch (e) {
