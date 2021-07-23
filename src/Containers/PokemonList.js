@@ -25,7 +25,7 @@ const PokemonList = () => {
   );
 
   const increment = () => {
-    if (offset <= 60) {
+    if (offset <= 48) {
       const newOffset = offset + 6;
       const newPage = page + 1;
       setOffset(newOffset);

@@ -17,20 +17,37 @@
 }
 
 .cardTitle {
-  color: black;
+  color: #323C9A;
   font-size: 25px;
   font-weight: bold;
   text-decoration: none;
   text-transform: capitalize;
 }
 
+.cardDetailTitle {
+  color: #323C9A;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
 .cardTitle:hover,
 .nav-home:hover {
-  color: #d35400;
+  color: #f6bf08;
 }
 
 .card-tags {
   padding-right: 8px;
+  font-weight: bold;
+}
+
+.evoNames {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.evoNameMatch {
+  color: #323C9A;
   font-weight: bold;
 }
 

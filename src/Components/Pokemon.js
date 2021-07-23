@@ -51,7 +51,6 @@ const Pokemon = ({ pokemon }) => {
             <span className="card-tags">Abilities:</span>
             {abilities}
           </Card.Text>
-
         </Card.Body>
       </Card>
     </Col>
