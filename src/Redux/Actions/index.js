@@ -15,7 +15,7 @@ export const showError = (e) => ({
 
 export const fetchPokemonList = (offset) => async (dispatch) => {
   try {
-    const url = `http://localhost:3000/pokemons?limit=2&offset=${offset}`;
+    const url = `http://localhost:3000/pokemons?limit=6&offset=${offset}`;
     const pokemons = await fetch(url).then((res) => res.json());
     dispatch(setLoading(true));
     dispatch(displayPokemons(pokemons.data));

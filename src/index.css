@@ -1,0 +1,30 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav-home {
+  font-size: 30px;
+}
+
+.pokemonList-card-img {
+  height: 300px;
+}
+
+.cardTitle {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.cardTitle:hover,
+.nav-home:hover {
+  color: #d35400;
+}
+
+.card-tags {
+  padding-right: 8px;
+  font-weight: bold;
+}
+

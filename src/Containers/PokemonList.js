@@ -25,8 +25,8 @@ const PokemonList = () => {
   );
 
   const increment = () => {
-    if (offset <= 8) {
-      const newOffset = offset + 2;
+    if (offset <= 60) {
+      const newOffset = offset + 6;
       const newPage = page + 1;
       setOffset(newOffset);
       setPage(newPage);
@@ -35,7 +35,7 @@ const PokemonList = () => {
 
   const decrement = () => {
     if (offset !== 0) {
-      const newOffset = offset - 2;
+      const newOffset = offset - 6;
       const newPage = page - 1;
       setOffset(newOffset);
       setPage(newPage);
@@ -47,18 +47,15 @@ const PokemonList = () => {
       <>
         <Container className="mt-4">
           <Pagination increment={increment} decrement={decrement} page={page} />
-          <h1>Names</h1>
           <Row className="g-4">
-            <ul>
-              { loading ? names : (
-                <Col className="d-flex justify-content-center spinner">
-                  <Spinner
-                    animation="border"
-                    role="status"
-                  />
-                </Col>
-              ) }
-            </ul>
+            { loading ? names : (
+              <Col className="d-flex justify-content-center spinner">
+                <Spinner
+                  animation="border"
+                  role="status"
+                />
+              </Col>
+            ) }
           </Row>
         </Container>
       </>
