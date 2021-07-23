@@ -44,7 +44,7 @@ const Pokemon = ({ pokemon }) => {
             </span>
           </Card.Text>
           <Card.Text>
-            <span className="card-tags">Types:</span>
+            <span className="card-tags">Type:</span>
             {types}
           </Card.Text>
           <Card.Text>

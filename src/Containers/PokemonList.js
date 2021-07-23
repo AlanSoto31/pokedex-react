@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Pokemon from '../Components/Pokemon';
 import { fetchPokemonList } from '../Redux/Actions/index';
-import Pagination from '../Components/Pagination';
+import PaginationC from '../Components/PaginationC';
 
 const PokemonList = () => {
   const pokemonsList = useSelector((state) => state.pokemons.list);
@@ -46,7 +46,7 @@ const PokemonList = () => {
     return (
       <>
         <Container className="mt-4">
-          <Pagination increment={increment} decrement={decrement} page={page} />
+          <PaginationC increment={increment} decrement={decrement} page={page} />
           <Row className="g-4">
             { loading ? names : (
               <Col className="d-flex justify-content-center spinner">

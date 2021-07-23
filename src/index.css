@@ -2,8 +2,14 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.navbar {
+  background: url('https://ahost2.bulbagarden.net/content/bulbagarden/images/bg-green-2x-optim.png') no-repeat center center;
+  background-size: cover;
+}
+
 .nav-home {
-  font-size: 30px;
+  font-size: 25px;
+  color: #323C9A;
 }
 
 .pokemonList-card-img {
