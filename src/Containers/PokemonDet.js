@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -6,57 +5,51 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import PokemonList from './PokemonList';
+import Info from '../Components/Info';
 
-const initialState = {"img_url_1": "", "name": "default", description: "", weight: ""}
+const initialState = {
+  img_url_1: '', name: '', description: '', weight: '', types: '[]', abilities: '[]', evolutions: '[]',
+};
 
 const PokemonDet = () => {
   const { id } = useParams();
   const pokemonsList = useSelector((state) => state.pokemons.list);
-  //console.log(pokemonList);
-  const pokemonDet = pokemonsList.length > 0 ? pokemonsList.find((pokemon) => pokemon.id === parseInt(id, 10)) : initialState;
-  // console.log(initialState);
+  const pokemonDet = pokemonsList.length > 0
+    ? pokemonsList.find((pokemon) => pokemon.id === parseInt(id, 10)) : initialState;
 
   const [temp, setTemp] = useState(pokemonDet);
 
   useEffect(() => {
-    console.log(temp);
-    // console.log(temp ? true : false);
-    
-    if(pokemonsList.length > 0) localStorage.setItem("pokemon", JSON.stringify(temp))
+    if (pokemonsList.length > 0) localStorage.setItem('pokemon', JSON.stringify(temp));
     else {
-      const pokemon = JSON.parse(localStorage.getItem("pokemon"));
-      console.log(pokemon);
+      const pokemon = JSON.parse(localStorage.getItem('pokemon'));
       setTemp(pokemon);
     }
-
-    // pokemonsList.length > 0 && localStorage.setItem("pokemon", JSON.stringify(temp));
   }, []);
 
-  const typesArr = !pokemonDet ? JSON.parse(pokemonDet.types) : []
-  const types = typesArr.map((type, index) => (
-    index === 0 ? <span key={Math.random()}>{type.type.name}</span> : (
-      <span key={Math.random()}>
-        <span className="p-2">|</span>
-        {type.type.name}
-      </span>
-    )
-  ));
+  const parseInfo = (str) => {
+    const jas = JSON.parse(str);
+    return jas;
+  };
 
-  const abilitiesArr = !pokemonDet ? JSON.parse(pokemonDet.abilities) : [];
-  const abilities = abilitiesArr ? abilitiesArr.map((ability, index) => (
-    index === 0 ? <span key={Math.random()}>{ability.ability.name}</span> : (
-      <span key={Math.random()}>
-        <span className="p-2">|</span>
-        {ability.ability.name}
-      </span>
-    )
-  )) : []
+  const renderTypes = () => {
+    const typesArr = parseInfo(temp.types);
+    return typesArr.map((type, index) => (
+      <Info key={type.type.name} data={type.type.name} index={index} />
+    ));
+  };
 
-  const evolutionsArr = !pokemonDet ? JSON.parse(pokemonDet.evolutions) : [];
-  const evolutions = evolutionsArr ? evolutionsArr.map((evo, index) => {
+  const renderAbilities = () => {
+    const abilitiesArr = parseInfo(temp.abilities);
+    return abilitiesArr.map((ability, index) => (
+      <Info key={ability.ability.name} data={ability.ability.name} index={index} />
+    ));
+  };
+
+  const evolutionsArr = parseInfo(temp.evolutions);
+  const evolutions = evolutionsArr.map((evo, index) => {
     let evoNameMatch = '';
-    if (evo === pokemonDet.name) {
+    if (evo === temp.name) {
       evoNameMatch = 'evoNameMatch';
     }
 
@@ -66,7 +59,7 @@ const PokemonDet = () => {
         {evo}
       </span>
     ));
-  }) : []
+  });
 
   return (
     <>
@@ -93,14 +86,14 @@ const PokemonDet = () => {
                 </Card.Text>
                 <Card.Text>
                   <span className="card-tags">Type:</span>
-                  {/* {types} */}
+                  {renderTypes()}
                 </Card.Text>
                 <Card.Text>
                   <span className="card-tags">Abilities:</span>
-                  {/* {abilities} */}
+                  {renderAbilities()}
                 </Card.Text>
                 <div className="text-center mt-4">
-                  {/* {evolutions} */}
+                  {evolutions}
                 </div>
               </Card.Body>
             </Col>
