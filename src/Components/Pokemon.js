@@ -3,27 +3,27 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
+import Info from './Info';
 
 const Pokemon = ({ pokemon }) => {
-  const typesString = JSON.parse(pokemon.types);
-  const types = typesString.map((type, index) => (
-    index === 0 ? <span key={Math.random()}>{type.type.name}</span> : (
-      <span key={Math.random()}>
-        <span className="p-2">|</span>
-        {type.type.name}
-      </span>
-    )
-  ));
+  const parseInfo = (str) => {
+    const jas = JSON.parse(str);
+    return jas;
+  };
 
-  const abilitiesString = JSON.parse(pokemon.abilities);
-  const abilities = abilitiesString.map((ability, index) => (
-    index === 0 ? <span key={Math.random()}>{ability.ability.name}</span> : (
-      <span key={Math.random()}>
-        <span className="p-2">|</span>
-        {ability.ability.name}
-      </span>
-    )
-  ));
+  const renderTypes = () => {
+    const typesArr = parseInfo(pokemon.types);
+    return typesArr.map((type, index) => (
+      <Info key={type.type.name} data={type.type.name} index={index} />
+    ));
+  };
+
+  const renderAbilities = () => {
+    const abilitiesArr = parseInfo(pokemon.abilities);
+    return abilitiesArr.map((ability, index) => (
+      <Info key={ability.ability.name} data={ability.ability.name} index={index} />
+    ));
+  };
 
   return (
     <Col sm={12} md={6} lg={4} className="mb-4">
@@ -45,11 +45,11 @@ const Pokemon = ({ pokemon }) => {
           </Card.Text>
           <Card.Text>
             <span className="card-tags">Type:</span>
-            {types}
+            {renderTypes()}
           </Card.Text>
           <Card.Text>
             <span className="card-tags">Abilities:</span>
-            {abilities}
+            {renderAbilities()}
           </Card.Text>
         </Card.Body>
       </Card>
