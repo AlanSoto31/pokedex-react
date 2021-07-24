@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Pokemon from '../Components/Pokemon';
 import { fetchPokemonList } from '../Redux/Actions/index';
 import PaginationC from '../Components/PaginationC';
+import Filter from '../Components/Filter';
 
 const PokemonList = () => {
   const pokemonsList = useSelector((state) => state.pokemons.list);
@@ -15,12 +16,31 @@ const PokemonList = () => {
   const dispatch = useDispatch();
   const [offset, setOffset] = useState(0);
   const [page, setPage] = useState(1);
+  const [typ, setTyp] = useState('ALL');
 
   useEffect(() => {
     dispatch(fetchPokemonList(offset));
   }, [offset]);
 
-  const names = pokemonsList.map(
+  const typesArr = pokemonsList.map((pokemon) => {
+    const typesName = JSON.parse(pokemon.types).map(
+      (typesArrPerPokemon) => typesArrPerPokemon.type.name,
+    );
+    return typesName;
+  });
+
+  const handleChangeFilter = (value) => {
+    setTyp(value);
+  };
+
+  const check = (pokemon) => {
+    let r;
+    const platTrue = JSON.parse(pokemon.types).filter((type) => type.type.name === typ || typ === 'ALL');
+    if (platTrue.length) r = pokemon;
+    return r;
+  };
+
+  const names = pokemonsList.filter(check).map(
     (pokemon) => <Pokemon key={pokemon.name} pokemon={pokemon} />,
   );
 
@@ -46,7 +66,12 @@ const PokemonList = () => {
     return (
       <>
         <Container className="mt-4">
-          <PaginationC increment={increment} decrement={decrement} page={page} />
+          { loading ? (
+            <div className="d-flex justify-content-between align-content-center">
+              <PaginationC increment={increment} decrement={decrement} page={page} />
+              <Filter types={typesArr} onChangeFilter={handleChangeFilter} />
+            </div>
+          ) : '' }
           <Row className="g-4">
             { loading ? names : (
               <Col className="d-flex justify-content-center spinner">
