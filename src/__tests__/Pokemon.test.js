@@ -8,7 +8,7 @@ describe('<Pokemon/>', () => {
   let component;
   const pokemon1 = {
     img_url_1: '', name: 'charmander', description: '', weight: '', types: '[]', abilities: '[]', evolutions: '[]',
-};
+  };
 
   beforeEach(() => {
     component = render(

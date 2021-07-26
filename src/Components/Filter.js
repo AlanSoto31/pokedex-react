@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
@@ -26,7 +27,8 @@ const Filter = ({ onChangeFilter, types }) => {
 
 Filter.propTypes = {
   onChangeFilter: PropTypes.func.isRequired,
-  types: PropTypes.arrayOf.isRequired,
+  types: PropTypes.array.isRequired,
 };
 
 export default Filter;
+/* eslint-enble react/forbid-prop-types */
