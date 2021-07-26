@@ -4,7 +4,8 @@
   <strong>Made by Alan Soto</strong>
   <br>
   This single page app is about a basic Pokedex where you can find up to 60 Pokémon (6 x page). On the home page, you will get an ordered list of the first 6 Pokémon cards, each with a picture and a short description such as name, weight, type, and abilities. You can filter the list by type of Pokémon such as grass, poison, fire, water, etc., to find your favorite Pokémon more easily. Can't find your favorite? don't worry, just click the ">" symbol to see the next group of Pokémon.
-  If you click on the name, the application will take you to the details page where you will find more detailed information.
+  If you click on the name, the application will take you to the details page where you will find more detailed information.<br>
+   The data is fetched from my own API  <a href="https://github.com/AlanSoto31/pokedex-api" target="_blank">pokedex-api</a>, which at the same time requests data from the official <a href="https://pokeapi.co/" target="_blank">Poke Api</a>.
 </p>
 
 ![screenshot](./public/screenshot.png)
