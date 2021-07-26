@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+<h1 align="center">Pokedex</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <strong>Made by Alan Soto</strong>
+  <br>
+  This single page app is about a basic Pokedex where you can find up to 60 Pokémon (6 x page). On the home page, you will get an ordered list of the first 6 Pokémon cards, each with a picture and a short description such as name, weight, type, and abilities. You can filter the list by type of Pokémon such as grass, poison, fire, water, etc., to find your favorite Pokémon more easily. Can't find your favorite? don't worry, just click the ">" symbol to see the next group of Pokémon.
+  If you click on the name, the application will take you to the details page where you will find more detailed information.
+</p>
 
-## Available Scripts
+![screenshot](./public/screenshot.png)
 
-In the project directory, you can run:
+<hr>
 
-### `yarn start`
+<p align="center">
+  <a href="https://github.com/AlanSoto31/pokedex-react/issues">
+    <img src="https://img.shields.io/badge/REPORT%20A%20BUG-purple?style=for-the-badge">
+  </a>
+   ‎ ‎ ‎ ‎
+  <a href="https://github.com/AlanSoto31/pokedex-react/issues">
+    <img src="https://img.shields.io/badge/Request%20a%20feature-purple?style=for-the-badge">
+  </a>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<hr>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Live Demo](#Live-Demo)
+- [Built With](#built-With)
+- [🖥️ Getting Started](#getting-Started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Testing](#testing)
+- [👥 Author](#author)
+- [🤝 Contributing](#contributing)
+- [⭐ Show your support](#show-your-support)
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Live Demo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[Live version](https://pokedex-react-31.herokuapp.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Built With
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- JavaScript
+- React
+- Redux
+- Bootstrap
+- Jest
+- VS Code
+- Heroku
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Getting Started
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Get a local copy, type on console...
 
-## Learn More
+````
+ $ cd <'the location yo want to save the project'>
+ $ git clone https://github.com/AlanSoto31/pokedex-react.git
+ ````
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+- nodejs 14.16.0
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Go inside the project folder: `cd pokedex-react`.
+2. Install dependencies: `npm install`.
+4. Start the application: `npm run start`
+5. Wait for the server to launch the app.
+6. Stop the application: `ctrl + c`
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Testing
 
-### Advanced Configuration
+1. Go inside the project folder: `cd pokedex-react`.
+2. Run the test: `npm run test`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👤 **Alan Soto**
 
-### `yarn build` fails to minify
+- GitHub: [@AlanSoto31](https://github.com/AlanSoto31)
+- Twitter: [@Alan_Soto31](https://twitter.com/Alan_Soto31)
+- LinkedIn: [Alan Soto](https://www.linkedin.com/in/alan-soto-valle/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/AlanSoto31/pokedex-react/issues).
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
